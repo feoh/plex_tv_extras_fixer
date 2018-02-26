@@ -3,6 +3,7 @@
 import pprint
 import argparse
 from os.path import join, realpath, sep
+from os import rename
 from glob import glob
 
 
@@ -40,6 +41,8 @@ def main():
         # Path needs to be expanded.
         new_path = join(args.directory + sep + new_filename)
         print("new pathname: {}".format(new_path))
+        rename(file, new_path)
+
 
 
 main()
